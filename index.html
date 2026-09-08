@@ -5,82 +5,189 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Naveto — Privacy Policy</title>
 <style>
-  body{max-width:44rem;margin:0 auto;padding:2.5rem 1.25rem 6rem;
-       font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-       color:#1a1815;background:#fbfaf8}
-  h1{font-size:1.7rem;letter-spacing:-.02em;margin:0 0 .35rem}
-  h2{font-size:1.12rem;margin:2.4rem 0 .6rem;letter-spacing:-.01em}
-  .sub{color:#6b6559;margin:0 0 2rem;font-size:.95rem}
-  .box{background:#fff;border:1px solid #e4e0d9;border-radius:14px;padding:1.1rem 1.25rem;margin:1.5rem 0}
-  .box p{margin:0}
-  strong{font-weight:640}
-  a{color:#1a1815}
-  footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid #e4e0d9;color:#6b6559;font-size:.9rem}
-  code{background:#f4f2ee;padding:.1rem .3rem;border-radius:4px;font-size:.9em}
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0 auto; max-width: 44rem; padding: 3rem 1.25rem 6rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px; line-height: 1.65; color: #1c1917; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e7e5e4; background: #17150f; }
+    a { color: #f5a46b; }
+    th, td, hr { border-color: #3a332c !important; }
+    code { background: #262220; }
+  }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .35rem; }
+  h2 { font-size: 1.2rem; margin: 2.4rem 0 .6rem; }
+  .sub { color: #78716c; margin: 0 0 2rem; }
+  a { color: #9a4a25; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: .5rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { text-align: left; padding: .55rem .7rem .55rem 0; border-bottom: 1px solid #e7e5e4; vertical-align: top; }
+  th { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: #78716c; font-weight: 600; }
+  code { background: #f5f5f4; padding: .1rem .3rem; border-radius: 3px; font-size: .9em; }
+  hr { border: 0; border-top: 1px solid #e7e5e4; margin: 2.5rem 0 0; }
+  .foot { color: #78716c; font-size: .9rem; margin-top: 1.5rem; }
 </style>
 </head>
 <body>
 
-<h1>Privacy Policy — Naveto</h1>
-<p class="sub">Last updated: 10 August 2026</p>
+<h1>Privacy Policy for Naveto</h1>
+<p class="sub">Last updated: 8 September 2026</p>
 
-<div class="box">
-  <p><strong>Naveto does not collect, transmit or share any personal data.</strong>
-  The app has no accounts, no analytics, no advertising and no third-party
-  tracking. It does not send anything to us or to anyone else.</p>
-</div>
+<p>Naveto is an app for learning German, published by an individual developer.
+This policy explains exactly what the app does with information, in plain
+language. The short version: there is no account, the app does not collect
+your personal information, and everything you do in it stays on your phone
+apart from the three specific cases described below.</p>
 
-<h2>What the app stores</h2>
-<p>Naveto saves your learning progress so it is still there when you reopen the
-app. That includes which lessons you have completed, your review schedule, your
-streak, the mistakes you have made while practising, and the settings you chose
-during setup.</p>
-<p><strong>All of it is stored only on your own device</strong>, in the app's
-private storage. None of it is uploaded, backed up to our servers, or accessible
-to us. We have no servers that receive it.</p>
+<h2>No account, and no profile of you</h2>
+<p>Naveto has no sign-in, no registration and no user accounts. It never asks
+for your name, email address, phone number or date of birth, and it has no
+server of its own that stores anything about you. Nobody, including the
+developer, can look up what you answered or how you are progressing.</p>
 
-<h2>Deleting your data</h2>
-<p>Uninstalling Naveto removes everything the app has stored. There is nothing
-held anywhere else, so there is nothing further to request or delete. You can
-also clear the app's data from your device's Android settings without
-uninstalling.</p>
+<h2>What is stored on your device</h2>
+<p>Your learning data is written to storage on your phone that belongs to the
+app alone. This includes:</p>
+<ul>
+  <li>Which lessons you have completed and your review schedule</li>
+  <li>Which grammar mistakes you have made, so the app can bring them back</li>
+  <li>Your settings: explanation language, sound, reminders, theme</li>
+  <li>Which days you studied, for the streak counter</li>
+</ul>
+<p>Uninstalling the app deletes all of it from your device.</p>
 
-<h2>Permissions</h2>
-<p>Naveto requests no sensitive permissions. It does not access your location,
-camera, microphone, contacts, files or phone identifiers.</p>
+<h2>The four things that leave your phone</h2>
 
-<h2>Internet access</h2>
-<p>The app declares the standard Android internet permission, which is required
-by the framework Naveto is built with. The app itself makes no network requests
-during normal use: all lessons and vocabulary are bundled inside the app and
-work fully offline.</p>
+<h3>1. Speech recognition, only while you use the speaking exercise</h3>
+<p>Some exercises invite you to say a German sentence out loud. When you tap
+the microphone button, Naveto asks <strong>Android's own speech recognition
+service</strong> to listen and return text. On most phones this service is
+provided by Google, and <strong>your speech may be sent to Google's servers to
+be turned into text</strong>, under Google's privacy policy rather than this
+one.</p>
+<p>Naveto itself never records, stores or uploads audio. It receives only the
+text of what the recogniser heard, compares it with the expected sentence, and
+discards it. The microphone is used only in the moments you tap that button,
+never in the background. Android asks your permission the first time, and
+declining is fine — the exercise falls back to marking yourself.</p>
+
+<h3>2. Backup of your progress, if your device does it</h3>
+<p>Naveto allows Android's standard backup system to include your learning
+progress, so that a new or reset phone can restore where you were. If Android
+Backup is switched on for your device, that data is copied to
+<strong>your own Google Drive account</strong>, where it counts against your
+storage and is governed by Google's terms. It is your backup, in your account;
+the developer has no access to it.</p>
+<p>You can turn this off in your phone's own settings, usually under System →
+Backup. You can also export a backup file yourself from Profile → Your
+progress, which puts a copy wherever you choose. Files you export are entirely
+under your control.</p>
+
+<h3>3. Crash reports</h3>
+<p>Naveto uses <strong>Firebase Crashlytics</strong>, a Google service, to
+report crashes. When the app crashes it sends a diagnostic report so the fault
+can be fixed. A report contains the technical circumstances of the crash —
+the point in the code where it happened, your device model, operating system
+version, app version, and a randomly generated installation identifier that
+distinguishes one installation from another. It does not contain your name,
+your email, your learning data or anything you typed.</p>
+
+<h3>4. Buying access to a level</h3>
+<p>Some levels of the course can be unlocked with a purchase. The purchase
+itself happens entirely inside <strong>Google Play</strong>, under Google's own
+terms and privacy policy. Naveto never sees your card, your billing address or
+your name, and it stores no payment information of any kind — Google does not
+give the app any of that, and the app does not ask.</p>
+<p>What the app receives from Google Play is a <em>purchase token</em>: an
+opaque string that says this installation is entitled to what was bought. The
+app keeps it on your device so that it can re-check the entitlement with Google
+Play when it starts.</p>
+<p>Google Play does not tell the device when a subscription is due to end, only
+whether it is currently active. So that the app can behave correctly around
+renewals and cancellations, the purchase token may be sent to a small
+verification service run by the developer, which passes it to Google's own
+Play Developer API and returns the expiry date. That service holds
+<strong>no database and no accounts</strong>: it stores nothing at all, it
+never learns who you are, and the token it receives is one Google already
+issued for your own purchase. If the service is unreachable, the app falls back
+to Google Play's on-device answer and keeps working.</p>
+<p>If you do not buy anything, none of this happens.</p>
+
+<h2>Notifications</h2>
+<p>If you switch study reminders on, Naveto schedules them on your device. The
+app also registers with <strong>Firebase Cloud Messaging</strong>, a Google
+service, which issues a token identifying this installation so a notification
+could be delivered to it. Notifications are off until you turn them on, and
+Android asks your permission at that moment rather than at launch. You can
+turn them off again at any time in the app or in your phone's settings.</p>
+
+<h2>What Naveto does not do</h2>
+<ul>
+  <li>It shows <strong>no advertising</strong> and contains no advertising
+      software.</li>
+  <li>It has <strong>no analytics or tracking</strong> beyond the crash
+      reporting described above. It does not record which screens you visit or
+      how long you use it.</li>
+  <li>It <strong>does not sell or share your information</strong> with anyone.
+      The only third parties involved at all are Google, in the four roles
+      above, and the developer's own verification service, which stores
+      nothing.</li>
+  <li>It does not use advertising identifiers, and does not track you across
+      other apps or websites.</li>
+</ul>
+
+<h2>Summary of data handling</h2>
+<table>
+  <thead><tr><th>What</th><th>Where it goes</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td>Lessons, reviews, mistakes, settings</td><td>Your device; your Google Drive if device backup is on</td><td>To teach you, and to survive a new phone</td></tr>
+    <tr><td>Speech, while the mic button is held</td><td>Android's speech recogniser, usually Google's</td><td>To turn what you said into text and check it</td></tr>
+    <tr><td>Crash diagnostics and device model</td><td>Firebase Crashlytics (Google)</td><td>To find and fix crashes</td></tr>
+    <tr><td>Notification token</td><td>Firebase Cloud Messaging (Google)</td><td>To be able to deliver a reminder</td></tr>
+    <tr><td>Purchase token, only if you buy something</td><td>Google Play; the developer's verification service, which stores nothing</td><td>To unlock what you paid for and to know when it expires</td></tr>
+  </tbody>
+</table>
 
 <h2>Children</h2>
-<p>Naveto is intended for adult learners and is not directed at children. We do
-not knowingly collect information from anyone, of any age, because we do not
-collect information at all.</p>
+<p>Naveto is intended for adults and older teenagers learning German. It is not
+directed at children, contains no content aimed at children, and does not
+knowingly collect information from them.</p>
+
+<h2>Your rights</h2>
+<p>Because the app holds no account and no personal data on any server, there
+is no stored profile to request, correct or delete. In practice:</p>
+<ul>
+  <li><strong>To erase everything:</strong> uninstall the app. To also remove
+      the cloud copy, delete the app's backup in your Google Drive backup
+      settings.</li>
+  <li><strong>To stop the microphone being used:</strong> revoke the microphone
+      permission in Android settings, or simply do not use the speaking
+      exercise.</li>
+  <li><strong>To stop notifications:</strong> turn reminders off in the app, or
+      block notifications for Naveto in Android settings.</li>
+</ul>
+<p>If you are in the European Union or the United Kingdom, crash reporting is
+carried out on the basis of legitimate interest in keeping the app working, and
+speech recognition is carried out at your request when you use that feature.
+You can exercise your rights, or ask any question about this policy, using the
+contact address below.</p>
 
 <h2>Changes to this policy</h2>
-<p>If Naveto ever adds a feature that does handle your data — for example
-optional accounts, cloud sync of your progress, or purchases — this policy will
-be updated before that feature ships, and the change will be described here with
-a new date at the top. Continuing to use a version of the app released before a
-change does not opt you into it.</p>
+<p>If the app's handling of information changes, this page will be updated and
+the date at the top will change with it. Substantial changes will also be noted
+in the app's release notes on Google Play.</p>
 
 <h2>Contact</h2>
-<p>Questions about this policy, or about the app, can go to
-<a href="mailto:REPLACE-WITH-YOUR-EMAIL">REPLACE-WITH-YOUR-EMAIL</a>.</p>
+<p>Questions about this policy, or about anything the app does with
+information, can be sent to:</p>
+<p><strong><a href="mailto:mihir.m.bavisi@gmail.com">mihir.m.bavisi@gmail.com</a></strong></p>
 
-<footer>
-  Naveto — German grammar and vocabulary.<br>
-  <!--
-    GERMANY: if this page is served from a site operated from Germany, you also
-    need an Impressum under §5 DDG (the successor to §5 TMG) — name, postal
-    address and contact, reachable from every page. That is a separate legal
-    obligation from this policy and applies to the website, not the app. Add it
-    at /impressum and link it here before the site is public.
-  -->
-</footer>
+<hr>
+<p class="foot">Naveto — German A1–C2, explained in Hindi, Tamil, Gujarati,
+Hinglish and English.</p>
 
 </body>
 </html>
