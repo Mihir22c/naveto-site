@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Naveto — Privacy Policy</title>
+<title>Naveto: Privacy Policy</title>
 <style>
   :root { color-scheme: light dark; }
   body {
@@ -34,19 +34,22 @@
 <body>
 
 <h1>Privacy Policy for Naveto</h1>
-<p class="sub">Last updated: 8 September 2026</p>
+<p class="sub">Last updated: 6 October 2026</p>
 
 <p>Naveto is an app for learning German, published by an individual developer.
 This policy explains exactly what the app does with information, in plain
-language. The short version: there is no account, the app does not collect
-your personal information, and everything you do in it stays on your phone
-apart from the three specific cases described below.</p>
+language. The short version: you can use all of Naveto without an account,
+and then your learning stays on your phone. If you <strong>choose</strong> to
+create a profile, your name, email address and a copy of your progress are
+stored on the developer's server so you can continue on another phone. If you
+send a report from the app, the report is stored so it can be read and
+answered. Each case is described below.</p>
 
-<h2>No account, and no profile of you</h2>
-<p>Naveto has no sign-in, no registration and no user accounts. It never asks
-for your name, email address, phone number or date of birth, and it has no
-server of its own that stores anything about you. Nobody, including the
-developer, can look up what you answered or how you are progressing.</p>
+<h2>Using Naveto without an account</h2>
+<p>A profile is optional. Without one, Naveto never asks for your name, email
+address, phone number or date of birth, and your learning data stays on your
+device (see the next section). Nobody, including the developer, can look up
+what you answered or how you are progressing.</p>
 
 <h2>What is stored on your device</h2>
 <p>Your learning data is written to storage on your phone that belongs to the
@@ -59,7 +62,7 @@ app alone. This includes:</p>
 </ul>
 <p>Uninstalling the app deletes all of it from your device.</p>
 
-<h2>The four things that leave your phone</h2>
+<h2>What can leave your phone</h2>
 
 <h3>1. Speech recognition, only while you use the speaking exercise</h3>
 <p>Some exercises invite you to say a German sentence out loud. When you tap
@@ -72,7 +75,7 @@ one.</p>
 text of what the recogniser heard, compares it with the expected sentence, and
 discards it. The microphone is used only in the moments you tap that button,
 never in the background. Android asks your permission the first time, and
-declining is fine — the exercise falls back to marking yourself.</p>
+declining is fine: the exercise falls back to marking yourself.</p>
 
 <h3>2. Backup of your progress, if your device does it</h3>
 <p>Naveto allows Android's standard backup system to include your learning
@@ -89,7 +92,7 @@ under your control.</p>
 <h3>3. Crash reports</h3>
 <p>Naveto uses <strong>Firebase Crashlytics</strong>, a Google service, to
 report crashes. When the app crashes it sends a diagnostic report so the fault
-can be fixed. A report contains the technical circumstances of the crash —
+can be fixed. A report contains the technical circumstances of the crash:
 the point in the code where it happened, your device model, operating system
 version, app version, and a randomly generated installation identifier that
 distinguishes one installation from another. It does not contain your name,
@@ -99,7 +102,7 @@ your email, your learning data or anything you typed.</p>
 <p>Some levels of the course can be unlocked with a purchase. The purchase
 itself happens entirely inside <strong>Google Play</strong>, under Google's own
 terms and privacy policy. Naveto never sees your card, your billing address or
-your name, and it stores no payment information of any kind — Google does not
+your name, and it stores no payment information of any kind. Google does not
 give the app any of that, and the app does not ask.</p>
 <p>What the app receives from Google Play is a <em>purchase token</em>: an
 opaque string that says this installation is entitled to what was bought. The
@@ -115,6 +118,91 @@ never learns who you are, and the token it receives is one Google already
 issued for your own purchase. If the service is unreachable, the app falls back
 to Google Play's on-device answer and keeps working.</p>
 <p>If you do not buy anything, none of this happens.</p>
+
+<h3>5. Checking a practice-exam answer you wrote, only if you ask</h3>
+<p>The practice exams include written tasks. You mark your own answer against
+the criteria shown on screen, and that marking happens entirely on your
+device. There is also a button that asks for a second opinion, and
+<strong>only if you tap it</strong> does anything leave your phone.</p>
+<p>What is sent is the text you wrote for that one task and the criteria
+printed above it, and <strong>nothing else</strong>. No name, no account, no
+learning history, no identifier. It goes to a small service run by the
+developer, which passes it to a language model, returns comments, and
+<strong>stores nothing</strong>: there is no database and no log of your
+writing. The comments are feedback only; they never change your score, because
+the app awards no marks for written answers in the first place and says so on
+the screen.</p>
+<p>If you never tap that button, none of this happens, and the exercise works
+exactly as it does offline.</p>
+
+<h3>6. Your profile and synced progress, only if you create a profile</h3>
+<p>You can create a profile with an email address and password (and, where the
+app offers it, with Sign in with Apple or Google). If you do, the following is
+stored on the developer's server:</p>
+<ul>
+  <li>your email address, and your name if you enter one;</li>
+  <li>a copy of your learning progress: the same data listed under "What is
+      stored on your device", including your settings and goals such as your
+      target level and exam month;</li>
+  <li>which kind of phone saved that copy (for example "iPhone" or the model
+      name of an Android phone) and when, so the app can ask which copy to
+      keep when two phones disagree;</li>
+  <li>a user ID that the server creates for you.</li>
+</ul>
+<p>Your password is stored only as a cryptographic hash by the sign-in service
+and cannot be read by anyone, including the developer. If you sign in with
+Apple or Google, Naveto receives your email address (or Apple's private relay
+address) and an identifier from them, never your Apple or Google password.</p>
+<p>The purpose is to give you your progress back on another phone, and to let
+you see and continue it under your name. It is never used for advertising,
+never sold and never shared, apart from the service providers named under
+"Where the data is kept".</p>
+
+<h3>7. Reports and suggestions you send</h3>
+<p>You can report a problem, a wrong translation or an idea from inside the
+app. A report contains what you write, plus the context needed to find the
+problem: the screen, the lesson and sentence it is about and the text that
+was shown, your explanation and app languages, the app and content version,
+your phone's operating system and the text size you use. It is stored on the
+developer's server so it can be read, fixed and answered, and you can see the
+status and any reply in the app.</p>
+<p>If you send a report without a profile, the server creates an anonymous
+user ID for you so that you can see your own reports. It contains no name or
+email. If you later create a profile on the same phone, your reports move to
+it. Please do not write personal information into a report that you would not
+want the developer to read.</p>
+
+<h2>Where the data is kept</h2>
+<p>Profiles, synced progress and reports are stored with
+<strong>Supabase</strong> (Supabase, Inc.), in its data centre in
+<strong>Frankfurt, Germany</strong> (EU). Supabase hosts the database and the
+sign-in service for the developer and processes the data only on the
+developer's instructions, under a data processing agreement that includes
+the EU Standard Contractual Clauses for any access from outside the EU.
+Sign in with Apple and Google sign-in, where used, are provided by Apple and
+Google under their own privacy policies.</p>
+<p>All of this data travels encrypted (HTTPS). Each person can read and change
+only their own profile, progress and reports; this is enforced by the database
+itself, not only by the app.</p>
+
+<h2 id="delete-account">How long it is kept, and deleting it</h2>
+<ul>
+  <li><strong>Profile and synced progress:</strong> until you delete your
+      account. One copy of your progress is kept; each upload replaces the
+      previous one.</li>
+  <li><strong>Reports:</strong> while your account exists, so that you can see
+      the answer, and deleted with it. Reports from a guest with no profile are
+      deleted after 24 months.</li>
+  <li><strong>Deleting your account:</strong> in the app, under You → your
+      profile → Delete account. This deletes your profile, the synced progress
+      and your reports from the server immediately; nothing is kept in a
+      "deactivated" state. Progress on your phone stays until you uninstall
+      the app. If you cannot use the app, email the address under Contact
+      from the address you signed up with, and the account will be deleted
+      within 30 days.</li>
+  <li>The server's own backups, where they exist, are overwritten within 7
+      days.</li>
+</ul>
 
 <h2>Notifications</h2>
 <p>If you switch study reminders on, Naveto schedules them on your device. The
@@ -132,9 +220,10 @@ turn them off again at any time in the app or in your phone's settings.</p>
       reporting described above. It does not record which screens you visit or
       how long you use it.</li>
   <li>It <strong>does not sell or share your information</strong> with anyone.
-      The only third parties involved at all are Google, in the four roles
-      above, and the developer's own verification service, which stores
-      nothing.</li>
+      The only third parties involved are Google and Apple in the roles above,
+      and Supabase, which stores profiles, synced progress and reports for the
+      developer.</li>
+  <li>It does not require an account. Every lesson works without one.</li>
   <li>It does not use advertising identifiers, and does not track you across
       other apps or websites.</li>
 </ul>
@@ -147,6 +236,9 @@ turn them off again at any time in the app or in your phone's settings.</p>
     <tr><td>Speech, while the mic button is held</td><td>Android's speech recogniser, usually Google's</td><td>To turn what you said into text and check it</td></tr>
     <tr><td>Crash diagnostics and device model</td><td>Firebase Crashlytics (Google)</td><td>To find and fix crashes</td></tr>
     <tr><td>Notification token</td><td>Firebase Cloud Messaging (Google)</td><td>To be able to deliver a reminder</td></tr>
+    <tr><td>A practice-exam answer you wrote, only if you tap "check my writing"</td><td>The developer's grading service, which stores nothing, and the language model behind it</td><td>To comment on what you wrote. Never to score it</td></tr>
+    <tr><td>Email, name, user ID and a copy of your progress, only if you create a profile</td><td>Supabase, Frankfurt (EU), for the developer</td><td>To give you your progress on another phone</td></tr>
+    <tr><td>A report you send, with its context</td><td>Supabase, Frankfurt (EU), for the developer</td><td>To find and fix the problem, and answer you</td></tr>
     <tr><td>Purchase token, only if you buy something</td><td>Google Play; the developer's verification service, which stores nothing</td><td>To unlock what you paid for and to know when it expires</td></tr>
   </tbody>
 </table>
@@ -154,11 +246,15 @@ turn them off again at any time in the app or in your phone's settings.</p>
 <h2>Children</h2>
 <p>Naveto is intended for adults and older teenagers learning German. It is not
 directed at children, contains no content aimed at children, and does not
-knowingly collect information from them.</p>
+knowingly collect information from them. You need to be at least 16 to create
+a profile; younger learners can use every lesson without one.</p>
 
 <h2>Your rights</h2>
-<p>Because the app holds no account and no personal data on any server, there
-is no stored profile to request, correct or delete. In practice:</p>
+<p>Without a profile, the app holds no personal data on any server. With one,
+you can see and correct your name in the app, take a copy of your
+progress (You → Save a backup), and delete everything (see "Deleting your
+account" above). You can also ask for a copy of everything stored about you,
+or ask any question, at the contact address below. In practice:</p>
 <ul>
   <li><strong>To erase everything:</strong> uninstall the app. To also remove
       the cloud copy, delete the app's backup in your Google Drive backup
@@ -169,9 +265,13 @@ is no stored profile to request, correct or delete. In practice:</p>
   <li><strong>To stop notifications:</strong> turn reminders off in the app, or
       block notifications for Naveto in Android settings.</li>
 </ul>
-<p>If you are in the European Union or the United Kingdom, crash reporting is
-carried out on the basis of legitimate interest in keeping the app working, and
-speech recognition is carried out at your request when you use that feature.
+<p>If you are in the European Union or the United Kingdom: your profile and
+synced progress are processed to provide the service you asked for (Art. 6(1)(b)
+GDPR); reports are processed at your request and in the legitimate interest of
+fixing the app (Art. 6(1)(b) and (f)); crash reporting is carried out on the
+basis of legitimate interest in keeping the app working; and speech
+recognition is carried out at your request when you use that feature. You also
+have the right to complain to a data protection authority.
 You can exercise your rights, or ask any question about this policy, using the
 contact address below.</p>
 
@@ -186,7 +286,7 @@ information, can be sent to:</p>
 <p><strong><a href="mailto:mihir.m.bavisi@gmail.com">mihir.m.bavisi@gmail.com</a></strong></p>
 
 <hr>
-<p class="foot">Naveto — German A1–C2, explained in Hindi, Tamil, Gujarati,
+<p class="foot">Naveto: German A1 to C2, explained in Hindi, Tamil, Gujarati,
 Hinglish and English.</p>
 
 </body>
