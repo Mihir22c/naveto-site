@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naveto: Send feedback</title>
+<meta name="description" content="Tell the developer of Naveto what works, what broke and what to change. Testers: your weekly check-in goes here.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/img/naveto.png">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/img/naveto.png" alt="">Naveto</a>
+    <nav class="nav" aria-label="Site">
+      <a href="/">Home</a>
+      <a href="/feedback/" aria-current="page">Feedback</a>
+      <a href="/privacy/">Privacy policy</a>
+    </nav>
+  </div>
+</header>
+<main class="doc"><div class="wrap narrow">
+
+<h1>Send feedback</h1>
+<p class="sub">For testers and learners. Write in English, Hindi, Gujarati or any
+language you like: it goes straight to Mihir, who builds Naveto, and every
+message is read.</p>
+
+<noscript><p class="note bad">This form needs JavaScript. You can also email
+<a href="mailto:mihir.m.bavisi@gmail.com?subject=Naveto%20feedback">mihir.m.bavisi@gmail.com</a>.</p></noscript>
+
+<form id="fb" class="form" novalidate>
+  <fieldset class="kinds">
+    <legend>What is it about?</legend>
+    <label><input type="radio" name="kind" value="checkin" checked> Weekly tester check-in</label>
+    <label><input type="radio" name="kind" value="bug"> Something broke</label>
+    <label><input type="radio" name="kind" value="translation"> Wrong or unclear text</label>
+    <label><input type="radio" name="kind" value="suggestion"> An idea</label>
+    <label><input type="radio" name="kind" value="other"> Something else</label>
+  </fieldset>
+
+  <div id="checkin" class="group">
+    <label class="field">What did you do in Naveto this week, and for roughly how long?
+      <textarea name="did" rows="3" maxlength="1500" placeholder="For example: three lessons and the word cards, about 40 minutes over four days"></textarea></label>
+    <label class="field">What confused you, or made you stop?
+      <textarea name="confused" rows="3" maxlength="1500" placeholder="A screen, a sentence, a moment. &quot;Nothing&quot; is a fine answer."></textarea></label>
+    <fieldset class="field">
+      <legend>Would you open Naveto next week without anyone asking you?</legend>
+      <div class="row">
+        <label><input type="radio" name="again" value="yes"> Yes</label>
+        <label><input type="radio" name="again" value="maybe"> Maybe</label>
+        <label><input type="radio" name="again" value="no"> No</label>
+      </div>
+    </fieldset>
+    <label class="field">Why? And anything else you want to say
+      <textarea name="why" rows="3" maxlength="1500"></textarea></label>
+  </div>
+
+  <div id="message" class="group" hidden>
+    <label class="field"><span id="msg-label">What happened, and what did you expect?</span>
+      <textarea name="message" rows="6" maxlength="4000"></textarea></label>
+  </div>
+
+  <div class="two">
+    <label class="field">Your explanation language
+      <select name="locale">
+        <option value="">Choose…</option>
+        <option value="en">English</option>
+        <option value="hi">हिन्दी (Hindi)</option>
+        <option value="hi-Latn">Hinglish</option>
+        <option value="ta">தமிழ் (Tamil)</option>
+        <option value="gu">ગુજરાતી (Gujarati)</option>
+        <option value="mr">मराठी (Marathi)</option>
+        <option value="te">తెలుగు (Telugu)</option>
+        <option value="ml">മലയാളം (Malayalam)</option>
+        <option value="bn">বাংলা (Bengali)</option>
+        <option value="kn">ಕನ್ನಡ (Kannada)</option>
+        <option value="other">Another language</option>
+      </select></label>
+    <label class="field">Your phone (optional)
+      <input name="device" maxlength="80" placeholder="e.g. Samsung A54, iPhone 13"></label>
+  </div>
+  <div class="two">
+    <label class="field">Your first name (optional)
+      <input name="name" maxlength="60" autocomplete="given-name" placeholder="Links your weekly answers"></label>
+    <label class="field">Email (optional)
+      <input name="email" type="email" maxlength="254" autocomplete="email" placeholder="Only if you would like a reply"></label>
+  </div>
+  <!-- Left empty by people; filled by bots. -->
+  <label class="trap" aria-hidden="true">Website <input name="website" tabindex="-1" autocomplete="off"></label>
+
+  <p class="fine">What you send is stored on Naveto's server in Frankfurt (EU) and
+  deleted after 12 months. Please do not include passwords or anything private.
+  See section 8 of the <a href="/privacy/#feedback">privacy policy</a>.</p>
+
+  <button class="btn" type="submit" id="send">Send</button>
+  <p id="status" class="note" role="status" aria-live="polite" hidden></p>
+</form>
+
+<div id="thanks" hidden>
+  <h2>Thank you.</h2>
+  <p>It has arrived and will be read. If you left an email address and asked
+  something, you will get an answer.</p>
+  <button class="btn ghost" type="button" id="again">Send another</button>
+</div>
+
+</div></main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>Made by Mihir Bavisi ·
+    <a href="mailto:mihir.m.bavisi@gmail.com">mihir.m.bavisi@gmail.com</a></div>
+    <nav aria-label="Legal">
+      <a href="/privacy/">Privacy policy</a>
+      <a href="/delete-account/">Delete your account</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Sent to submit_site_feedback() on Naveto's Supabase project
+  // (supabase/migrations/20261011..._site_feedback_v1.sql). The key is the
+  // publishable one the app itself ships; the function can only add a row.
+  var URL_ = 'https://ppzyhczddwcpzowbqede.supabase.co', KEY = 'sb_publishable_YXtONOS5kfweQQ_4x0CjOg_YPjzHB2v';
+  var form = document.getElementById('fb');
+  var labels = {
+    bug: 'What happened, and what did you expect? Which screen were you on?',
+    translation: 'Which lesson or sentence? What does it say, and what should it say?',
+    suggestion: 'What would make Naveto better for you?',
+    other: 'Your message'
+  };
+  function kind() { return form.querySelector('input[name="kind"]:checked').value; }
+  function sync() {
+    var k = kind();
+    document.getElementById('checkin').hidden = k !== 'checkin';
+    document.getElementById('message').hidden = k === 'checkin';
+    if (k !== 'checkin') document.getElementById('msg-label').textContent = labels[k];
+  }
+  Array.prototype.forEach.call(form.querySelectorAll('input[name="kind"]'), function (r) {
+    r.addEventListener('change', sync);
+  });
+  // ?kind=bug etc. preselects, so the app or a message can link straight to one.
+  var pre = new URLSearchParams(location.search).get('kind');
+  var preInput = pre && form.querySelector('input[name="kind"][value="' + pre + '"]');
+  if (preInput) preInput.checked = true;
+  sync();
+
+  function say(text, bad) {
+    var s = document.getElementById('status');
+    s.hidden = false; s.textContent = text; s.className = 'note' + (bad ? ' bad' : '');
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = form.elements, k = kind();
+    if (f.website.value) return; // a bot
+    var answers = {}, message = null;
+    if (k === 'checkin') {
+      ['did', 'confused', 'why'].forEach(function (n) { if (f[n].value.trim()) answers[n] = f[n].value.trim(); });
+      var again = form.querySelector('input[name="again"]:checked');
+      if (again) answers.again = again.value;
+      if (!answers.did) { say('Please say what you did in Naveto this week.', true); f.did.focus(); return; }
+    } else {
+      message = f.message.value.trim();
+      if (!message) { say('Please write a few words first.', true); f.message.focus(); return; }
+    }
+    var email = f.email.value.trim();
+    if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      say('That email address does not look right. Leave it empty if you do not want a reply.', true); f.email.focus(); return;
+    }
+    var btn = document.getElementById('send');
+    btn.disabled = true; say('Sending…');
+    fetch(URL_ + '/rest/v1/rpc/submit_site_feedback', {
+      method: 'POST',
+      headers: {'apikey': KEY, 'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        p_kind: k, p_message: message, p_answers: answers,
+        p_name: f.name.value.trim() || null, p_email: email || null,
+        p_locale: f.locale.value || null, p_device: f.device.value.trim() || null
+      })
+    }).then(function (r) {
+      if (r.ok) {
+        form.hidden = true; document.getElementById('thanks').hidden = false; window.scrollTo(0, 0);
+        return;
+      }
+      return r.json().catch(function () { return {}; }).then(function (j) {
+        throw new Error(j && j.message ? j.message : 'HTTP ' + r.status);
+      });
+    }).catch(function (err) {
+      say('It did not send (' + err.message + '). Please try again, or email mihir.m.bavisi@gmail.com.', true);
+    }).then(function () { btn.disabled = false; });
+  });
+  document.getElementById('again').addEventListener('click', function () {
+    form.reset(); sync(); document.getElementById('status').hidden = true;
+    document.getElementById('thanks').hidden = true; form.hidden = false;
+  });
+</script>
+</body>
+</html>

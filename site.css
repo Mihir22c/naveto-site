@@ -20,7 +20,7 @@
   --radius: 18px;
   --font: "Atkinson", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           "Noto Sans", "Noto Sans Devanagari", "Noto Sans Gujarati", "Noto Sans Tamil",
-          "Noto Sans Telugu", "Noto Sans Malayalam", sans-serif;
+          "Noto Sans Telugu", "Noto Sans Malayalam", "Noto Sans Bengali", "Noto Sans Kannada", sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -171,3 +171,33 @@ section + section { border-top: 1px solid var(--border); }
   .grid4 { grid-template-columns: 1fr; }
   .sentence { font-size: 22px; }
 }
+
+/* the feedback form (/feedback/) */
+/* [hidden] must win over a class that sets display (.form is a grid). */
+[hidden] { display: none !important; }
+.form .group { display: grid; gap: 18px; }
+.form { display: grid; gap: 18px; margin-top: 8px; }
+.form fieldset { border: 0; padding: 0; margin: 0; }
+.form legend { font-weight: 600; margin-bottom: 8px; padding: 0; }
+.kinds { display: flex; flex-wrap: wrap; gap: 8px; }
+.kinds legend { width: 100%; }
+.kinds label { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+  border: 1px solid var(--border-strong); background: var(--surface); cursor: pointer; font-size: 15px; }
+.kinds label:has(input:checked) { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+.kinds input { accent-color: var(--ember); margin: 0; }
+.field { display: grid; gap: 6px; font-weight: 600; }
+.field .row { display: flex; gap: 18px; font-weight: 400; }
+.field .row label { display: inline-flex; gap: 6px; align-items: center; }
+.form textarea, .form input:not([type="radio"]), .form select {
+  font: inherit; font-weight: 400; color: var(--text); background: var(--surface);
+  border: 1px solid var(--border-strong); border-radius: 12px; padding: 10px 12px; width: 100%; }
+.form textarea:focus, .form input:focus, .form select:focus { outline: 2px solid var(--ember); outline-offset: 1px; }
+.form .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form .fine { color: var(--muted); font-size: 14px; margin: 0; }
+.form .btn { border: 0; cursor: pointer; font: inherit; font-weight: 600; justify-self: start; min-width: 160px; }
+.form .btn:disabled { opacity: .6; cursor: default; }
+.btn.ghost { cursor: pointer; font: inherit; }
+.note { margin: 0; padding: 10px 14px; border-radius: 12px; background: var(--surface2); }
+.note.bad { background: var(--bad-bg); color: var(--bad); border: 1px solid var(--bad-br); }
+.trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+@media (max-width: 560px) { .form .two { grid-template-columns: 1fr; } }
