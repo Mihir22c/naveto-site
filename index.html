@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#FBF6EF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14110E" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="Naveto: German grammar, explained in your language">
-<meta property="og:description" content="A1 to C2. Explained in Hindi, Hinglish, Tamil, Gujarati, Marathi, Telugu, Malayalam or English.">
+<meta property="og:description" content="A1 to C2. Explained in Hindi, Hinglish, Tamil, Gujarati, Marathi, Telugu, Malayalam, Bengali, Kannada or English.">
 <meta property="og:image" content="https://naveto.mihirbavisi.com/img/drachin.png">
 <link rel="icon" href="/img/naveto.png">
 <link rel="stylesheet" href="/site.css">
@@ -33,7 +33,7 @@
       <span class="pill">In testing on Android · iPhone next</span>
       <h1>German grammar, explained in the language you think in.</h1>
       <p class="lede">Naveto teaches German from A1 to C2. Every rule from A1 to B1 is
-      written to contrast German with Hindi, Hinglish, Tamil, Gujarati, Marathi, Telugu, Malayalam or English, and every German sentence is
+      written to contrast German with Hindi, Hinglish, Tamil, Gujarati, Marathi, Telugu, Malayalam, Bengali, Kannada or English, and every German sentence is
       spoken aloud, offline.</p>
       <div class="cta">
         <a class="btn" href="mailto:mihir.m.bavisi@gmail.com?subject=Naveto%20testing">Ask to join the test</a>
@@ -55,7 +55,7 @@
       <div class="stat"><b>1,478</b><span>drill items</span></div>
       <div class="stat"><b>2,923</b><span>words, each with a sentence</span></div>
       <div class="stat"><b>10</b><span>exam-format practice papers</span></div>
-      <div class="stat"><b>8</b><span>explanation languages</span></div>
+      <div class="stat"><b>10</b><span>explanation languages</span></div>
     </div>
   </div>
 </section>
@@ -145,14 +145,15 @@
 
 <section id="languages">
   <div class="wrap">
-    <h2>Explained in eight languages.</h2>
+    <h2>Explained in ten languages.</h2>
     <p class="lede" style="margin-top:12px">From A1 to B1 every lesson has a note written for
     speakers of your language: what works the same, and what will trip you up. From B2
     up, English carries you. The interface, the lessons and every word's meaning are
     translated too.</p>
     <div class="langs" id="langs"></div>
-    <p class="muted" style="margin-top:20px">Marathi, Telugu and Malayalam are new. If a
-    sentence reads wrongly, the Report button under every answer sends it straight to us.</p>
+    <p class="muted" style="margin-top:20px">Marathi, Telugu, Malayalam, Bengali and Kannada
+    are new. If a sentence reads wrongly, the Report button under every answer sends it
+    straight to us. Coming next: Vietnamese and Turkish.</p>
   </div>
 </section>
 
@@ -184,7 +185,7 @@
 
 <script>
   // Real strings from the app's tables (src/content/l10n), put in by build_site.py.
-  var L = [{"id": "en", "label": "English", "sub": "English", "explanation": "kein is the nominative masculine. Kaffee is what you drink, the object of trinken, so it is accusative: keinen."}, {"id": "hi", "label": "हिन्दी", "sub": "Hindi", "explanation": "kein पुल्लिंग नॉमिनेटिव है। Kaffee वह चीज़ है जो आप पीते हैं, यानी trinken का कर्म, इसलिए यह अकुज़ेटिव है: keinen।"}, {"id": "hi-Latn", "label": "Hinglish", "sub": "Hinglish", "explanation": "kein nominative masculine hai. Kaffee voh cheez hai jo aap peete ho, yaani trinken ka object, isliye yeh accusative hai: keinen."}, {"id": "ta", "label": "தமிழ்", "sub": "Tamil", "explanation": "kein நாமினேட்டிவ் ஆண்பால். Kaffee நீங்கள் குடிப்பது, அதாவது trinken-இன் செயப்படுபொருள், எனவே அது அக்யூசேட்டிவ்: keinen."}, {"id": "gu", "label": "ગુજરાતી", "sub": "Gujarati", "explanation": "kein નોમિનેટિવ પુલ્લિંગ છે. Kaffee એ છે જે તમે પીઓ છો, એટલે કે trinken નું કર્મ, તેથી તે અક્યુઝેટિવ છે: keinen."}, {"id": "mr", "label": "मराठी", "sub": "Marathi", "explanation": "kein हे नॉमिनेटिव्ह पुल्लिंग रूप आहे. Kaffee म्हणजे तुम्ही जे पिता ते, म्हणजे trinken चे कर्म, म्हणून ते अक्युझेटिव्ह आहे: keinen."}, {"id": "te", "label": "తెలుగు", "sub": "Telugu", "explanation": "kein నామినేటివ్ పుంలింగం. Kaffee మీరు తాగేది, అంటే trinken కి కర్మ, కాబట్టి అది అక్యూజేటివ్: keinen."}, {"id": "ml", "label": "മലയാളം", "sub": "Malayalam", "explanation": "kein നോമിനേറ്റീവ് പുല്ലിംഗമാണ്. Kaffee നിങ്ങൾ കുടിക്കുന്ന വസ്തുവാണ്, trinken എന്ന ക്രിയയുടെ കർമ്മം; അതുകൊണ്ട് അത് അക്യുസേറ്റീവ് ആണ്: keinen."}];
+  var L = [{"id": "en", "label": "English", "sub": "English", "explanation": "kein is the nominative masculine. Kaffee is what you drink, the object of trinken, so it is accusative: keinen."}, {"id": "hi", "label": "हिन्दी", "sub": "Hindi", "explanation": "kein पुल्लिंग नोमिनाटीफ़ है। Kaffee वह चीज़ है जो आप पीते हैं, यानी trinken का कर्म, इसलिए यह अकुज़ाटीफ़ है: keinen।"}, {"id": "hi-Latn", "label": "Hinglish", "sub": "Hinglish", "explanation": "kein Nominativ masculine hai. Kaffee voh cheez hai jo aap peete ho, yaani trinken ka object, isliye yeh Akkusativ hai: keinen."}, {"id": "ta", "label": "தமிழ்", "sub": "Tamil", "explanation": "kein நோமினாட்டீஃப் ஆண்பால். Kaffee நீங்கள் குடிப்பது, அதாவது trinken-இன் செயப்படுபொருள், எனவே அது அக்குஸாட்டீஃப்: keinen."}, {"id": "gu", "label": "ગુજરાતી", "sub": "Gujarati", "explanation": "kein નોમિનાટીફ પુલ્લિંગ છે. Kaffee એ છે જે તમે પીઓ છો, એટલે કે trinken નું કર્મ, તેથી તે અકુઝાટીફ છે: keinen."}, {"id": "mr", "label": "मराठी", "sub": "Marathi", "explanation": "kein हे नोमिनाटीफ पुल्लिंग रूप आहे. Kaffee म्हणजे तुम्ही जे पिता ते, म्हणजे trinken चे कर्म, म्हणून ते अकुझाटीफ आहे: keinen."}, {"id": "te", "label": "తెలుగు", "sub": "Telugu", "explanation": "kein నోమినాటీఫ్ పుంలింగం. Kaffee మీరు తాగేది, అంటే trinken కి కర్మ, కాబట్టి అది అకుజాటీఫ్: keinen."}, {"id": "ml", "label": "മലയാളം", "sub": "Malayalam", "explanation": "kein നോമിനാറ്റീഫ് പുല്ലിംഗമാണ്. Kaffee നിങ്ങൾ കുടിക്കുന്ന വസ്തുവാണ്, trinken എന്ന ക്രിയയുടെ കർമ്മം; അതുകൊണ്ട് അത് അക്കുസാറ്റീഫ് ആണ്: keinen."}, {"id": "bn", "label": "বাংলা", "sub": "Bengali", "explanation": "kein হলো নোমিনাটীফ পুংলিঙ্গ। Kaffee হলো যা আপনি পান করেন, অর্থাৎ trinken-এর কর্ম, তাই এটা আকুজাটীফ: keinen।"}, {"id": "kn", "label": "ಕನ್ನಡ", "sub": "Kannada", "explanation": "kein ಎಂಬುದು ನೋಮಿನಾಟೀಫ್ ಪುಲ್ಲಿಂಗ. Kaffee ನೀವು ಕುಡಿಯುವ ವಸ್ತು, trinken ನ ಕರ್ಮ, ಹಾಗಾಗಿ ಅದು ಅಕುಜಾಟೀಫ್: keinen."}];
   var chips = document.getElementById('chips'), langs = document.getElementById('langs');
   function show(id) {
     var l = L.find(function (x) { return x.id === id; });
