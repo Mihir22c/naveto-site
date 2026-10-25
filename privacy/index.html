@@ -22,7 +22,7 @@
 <main class="doc"><div class="wrap narrow">
 
 <h1>Privacy Policy for Naveto</h1>
-<p class="sub">Last updated: 11 October 2026</p>
+<p class="sub">Last updated: 25 October 2026</p>
 
 <p>Naveto is an app for learning German, published by an individual developer.
 This policy explains exactly what the app does with information, in plain
@@ -59,10 +59,15 @@ service</strong> to listen and return text. On most phones this service is
 provided by Google, and <strong>your speech may be sent to Google's servers to
 be turned into text</strong>, under Google's privacy policy rather than this
 one.</p>
+<p>On an <strong>iPhone</strong>, Naveto uses <strong>Apple's speech
+recognition</strong>. Where the iPhone supports it, the speech is turned into
+text on the phone itself and does not leave it; otherwise it is sent to Apple
+to be turned into text, under Apple's privacy policy. iOS asks your permission
+for speech recognition and for the microphone the first time.</p>
 <p>Naveto itself never records, stores or uploads audio. It receives only the
 text of what the recogniser heard, compares it with the expected sentence, and
 discards it. The microphone is used only in the moments you tap that button,
-never in the background. Android asks your permission the first time, and
+never in the background. Your phone asks your permission the first time, and
 declining is fine: the exercise falls back to marking yourself.</p>
 
 <h3>2. Backup of your progress, if your device does it</h3>
@@ -159,6 +164,15 @@ user ID for you so that you can see your own reports. It contains no name or
 email. If you later create a profile on the same phone, your reports move to
 it. Please do not write personal information into a report that you would not
 want the developer to read.</p>
+<p>You can add up to three <strong>screenshots or screen recordings</strong>
+to a report, picked by you from your photos (Naveto needs no access to your
+photo library for this; your phone's own picker hands over only what you
+choose). They are stored privately with the report, seen only by the
+developer, and <strong>deleted after 90 days</strong>. Check that a picture
+shows nothing private, such as other people's names, messages or
+notifications. The report also carries what the screen knew when you tapped
+Report, for example the task and the corrections of a talk with the speaking
+partner, so the problem can be found without a picture.</p>
 
 <h3 id="feedback">8. Feedback you send from this website</h3>
 <p>The <a href="/feedback/">feedback page</a> on this website lets testers and
@@ -168,6 +182,31 @@ email address, your explanation language and your phone model, together with
 the time it was sent. The page records nothing else: no cookies, no device
 identifiers, no IP address in the stored message. It is read by the developer
 to improve Naveto and, if you left an email address, to answer you.</p>
+<p>You can add up to three screenshots or screen recordings to it. They are
+stored privately with your message, seen only by the developer, and deleted
+after 90 days.</p>
+
+<h3 id="partner">9. Speaking with Lena, the AI partner, only if you use it</h3>
+<p>"Speak with a partner" lets you practise the speaking tasks of the A2 and
+B1 exams with Lena, a practice partner run by an AI model. It needs a profile
+and an internet connection, and <strong>nothing happens unless you start a
+talk</strong>.</p>
+<p>What you say is first turned into text by your phone's own speech
+recognition, as described in section 1. <strong>No recording of your voice is
+sent to Naveto.</strong> During a talk, the text of the conversation so far is
+sent with each turn to the developer's server in Frankfurt, which passes it to
+<strong>Anthropic</strong> (Anthropic, PBC, United States), whose Claude model
+writes Lena's answers, hints and the corrections at the end. Lena's answers
+are turned into speech by <strong>Google Cloud Text-to-Speech</strong>. Under
+their commercial terms neither provider uses this text to train its models;
+Anthropic may keep it for a limited time to detect abuse.</p>
+<p>Naveto's server <strong>does not store the conversation</strong>. It keeps
+one row per talk: your user ID, which task it was, when it started, how many
+times you spoke, how many hints you asked for and an estimate of what the talk
+cost. That row is used to apply the limit on talks per week and the monthly
+budget, and is deleted with your account, or after 400 days.</p>
+<p>If you report one of Lena's answers, the conversation up to that point is
+sent as part of the report (section 7), because the report is about it.</p>
 
 <h2>Where the data is kept</h2>
 <p>Profiles, synced progress, reports and website feedback are stored with
@@ -220,9 +259,10 @@ turn them off again at any time in the app or in your phone's settings.</p>
       reporting described above. It does not record which screens you visit or
       how long you use it.</li>
   <li>It <strong>does not sell or share your information</strong> with anyone.
-      The only third parties involved are Google and Apple in the roles above,
-      and Supabase, which stores profiles, synced progress, reports and
-      website feedback for the developer.</li>
+      The only third parties involved are Google and Apple in the roles above;
+      Supabase, which stores profiles, synced progress, reports and
+      website feedback for the developer; and, only while you talk with the
+      AI partner, Anthropic and Google Cloud Text-to-Speech (section 9).</li>
   <li>It does not require an account. Every lesson works without one.</li>
   <li>It does not use advertising identifiers, and does not track you across
       other apps or websites.</li>
@@ -233,13 +273,16 @@ turn them off again at any time in the app or in your phone's settings.</p>
   <thead><tr><th>What</th><th>Where it goes</th><th>Why</th></tr></thead>
   <tbody>
     <tr><td>Lessons, reviews, mistakes, settings</td><td>Your device; your Google Drive if device backup is on</td><td>To teach you, and to survive a new phone</td></tr>
-    <tr><td>Speech, while the mic button is held</td><td>Android's speech recogniser, usually Google's</td><td>To turn what you said into text and check it</td></tr>
+    <tr><td>Speech, while the mic button is held</td><td>Android's speech recogniser, usually Google's; on iPhone, Apple's (on the phone where it can)</td><td>To turn what you said into text and check it</td></tr>
     <tr><td>Crash diagnostics and device model</td><td>Firebase Crashlytics (Google)</td><td>To find and fix crashes</td></tr>
     <tr><td>Notification token</td><td>Firebase Cloud Messaging (Google)</td><td>To be able to deliver a reminder</td></tr>
     <tr><td>A practice-exam answer you wrote, only if you tap "check my writing"</td><td>The developer's grading service, which stores nothing, and the language model behind it</td><td>To comment on what you wrote. Never to score it</td></tr>
     <tr><td>Email, name, user ID and a copy of your progress, only if you create a profile</td><td>Supabase, Frankfurt (EU), for the developer</td><td>To give you your progress on another phone</td></tr>
+    <tr><td>Screenshots or recordings you add to a report or to website feedback</td><td>Supabase, Frankfurt (EU), for the developer</td><td>To see the problem; deleted after 90 days</td></tr>
     <tr><td>A report you send, with its context</td><td>Supabase, Frankfurt (EU), for the developer</td><td>To find and fix the problem, and answer you</td></tr>
     <tr><td>Feedback from this website, with a name, email, language or phone model only if you give them</td><td>Supabase, Frankfurt (EU), for the developer</td><td>To improve Naveto, and answer you if you asked</td></tr>
+    <tr><td>The text of a talk with the AI partner, only while you talk</td><td>The developer's server (Frankfurt), Anthropic (US) and Google Cloud Text-to-Speech; not stored by Naveto</td><td>To give Lena's answers, hints and corrections</td></tr>
+    <tr><td>One row per partner talk: user ID, task, time, number of turns and hints, estimated cost</td><td>Supabase, Frankfurt (EU), for the developer</td><td>To apply the weekly limit and the monthly budget</td></tr>
     <tr><td>Purchase token, only if you buy something</td><td>Google Play; the developer's verification service, which stores nothing</td><td>To unlock what you paid for and to know when it expires</td></tr>
   </tbody>
 </table>
@@ -261,8 +304,8 @@ or ask any question, at the contact address below. In practice:</p>
       the cloud copy, delete the app's backup in your Google Drive backup
       settings.</li>
   <li><strong>To stop the microphone being used:</strong> revoke the microphone
-      permission in Android settings, or simply do not use the speaking
-      exercise.</li>
+      permission in Android or iPhone settings, or simply do not use the
+      speaking exercise.</li>
   <li><strong>To stop notifications:</strong> turn reminders off in the app, or
       block notifications for Naveto in Android settings.</li>
 </ul>
@@ -271,7 +314,10 @@ synced progress are processed to provide the service you asked for (Art. 6(1)(b)
 GDPR); reports and website feedback are processed at your request and in the
 legitimate interest of fixing and improving the app (Art. 6(1)(b) and (f)); crash reporting is carried out on the
 basis of legitimate interest in keeping the app working; and speech
-recognition is carried out at your request when you use that feature. You also
+recognition and the AI partner are used at your request when you use those
+features (Art. 6(1)(b)). Sending the text of a talk to Anthropic in the
+United States relies on the European Commission's standard contractual
+clauses in Anthropic's data processing terms. You also
 have the right to complain to a data protection authority.
 You can exercise your rights, or ask any question about this policy, using the
 contact address below.</p>

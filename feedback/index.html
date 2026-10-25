@@ -87,6 +87,11 @@ message is read.</p>
     <label class="field">Email (optional)
       <input name="email" type="email" maxlength="254" autocomplete="email" placeholder="Only if you would like a reply"></label>
   </div>
+  <label class="field">Screenshots or a screen recording (optional, up to 3)
+    <input type="file" name="files" accept="image/*,video/*" multiple></label>
+  <p class="fine">Images up to 10 MB, videos up to 50 MB. Please check they show
+  nothing private, such as names, messages or notifications. They are kept
+  for 90 days.</p>
   <!-- Left empty by people; filled by bots. -->
   <label class="trap" aria-hidden="true">Website <input name="website" tabindex="-1" autocomplete="off"></label>
 
@@ -102,6 +107,8 @@ message is read.</p>
   <h2>Thank you.</h2>
   <p>It has arrived and will be read. If you left an email address and asked
   something, you will get an answer.</p>
+  <p id="thanks-files" class="note bad" hidden>Your message arrived, but not
+  every file did. Please try sending the missing ones again.</p>
   <button class="btn ghost" type="button" id="again">Send another</button>
 </div>
 
@@ -168,23 +175,55 @@ message is read.</p>
     if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
       say('That email address does not look right. Leave it empty if you do not want a reply.', true); f.email.focus(); return;
     }
+    // Screenshots and recordings (25 Oct): at most 3, images 10 MB, videos
+    // 50 MB. The row is written first and returns its id; the files go into
+    // that row's folder, which accepts exactly as many as the row declared.
+    var files = Array.prototype.slice.call(f.files.files || []);
+    if (files.length > 3) { say('Please choose at most 3 files.', true); return; }
+    for (var i = 0; i < files.length; i++) {
+      var isVideo = /^video\//.test(files[i].type);
+      if (!/^(image|video)\//.test(files[i].type)) { say('Only pictures and videos can be added.', true); return; }
+      if (files[i].size > (isVideo ? 50 : 10) * 1024 * 1024) {
+        say('"' + files[i].name + '" is too big. Pictures up to 10 MB, videos up to 50 MB.', true); return;
+      }
+    }
     var btn = document.getElementById('send');
     btn.disabled = true; say('Sending…');
-    fetch(URL_ + '/rest/v1/rpc/submit_site_feedback', {
+    var failed = 0;
+    fetch(URL_ + '/rest/v1/rpc/submit_site_feedback_v2', {
       method: 'POST',
       headers: {'apikey': KEY, 'Content-Type': 'application/json'},
       body: JSON.stringify({
         p_kind: k, p_message: message, p_answers: answers,
         p_name: f.name.value.trim() || null, p_email: email || null,
-        p_locale: f.locale.value || null, p_device: f.device.value.trim() || null
+        p_locale: f.locale.value || null, p_device: f.device.value.trim() || null,
+        p_attachments: files.length
       })
     }).then(function (r) {
-      if (r.ok) {
-        form.hidden = true; document.getElementById('thanks').hidden = false; window.scrollTo(0, 0);
-        return;
+      if (!r.ok) {
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          throw new Error(j && j.message ? j.message : 'HTTP ' + r.status);
+        });
       }
-      return r.json().catch(function () { return {}; }).then(function (j) {
-        throw new Error(j && j.message ? j.message : 'HTTP ' + r.status);
+      return r.json().then(function (id) {
+        var chain = Promise.resolve();
+        files.forEach(function (file, n) {
+          chain = chain.then(function () {
+            say('Sending file ' + (n + 1) + ' of ' + files.length + '…');
+            var ext = (file.name.split('.').pop() || 'bin').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 5) || 'bin';
+            return fetch(URL_ + '/storage/v1/object/site-feedback-media/' + id + '/' + (n + 1) + '.' + ext, {
+              method: 'POST',
+              headers: {'apikey': KEY, 'Content-Type': file.type || 'application/octet-stream'},
+              body: file
+            }).then(function (u) { if (!u.ok) failed++; }, function () { failed++; });
+          });
+        });
+        return chain;
+      }).then(function () {
+        form.hidden = true; document.getElementById('thanks').hidden = false; window.scrollTo(0, 0);
+        if (failed > 0) {
+          document.getElementById('thanks-files').hidden = false;
+        }
       });
     }).catch(function (err) {
       say('It did not send (' + err.message + '). Please try again, or email mihir.m.bavisi@gmail.com.', true);
@@ -193,6 +232,7 @@ message is read.</p>
   document.getElementById('again').addEventListener('click', function () {
     form.reset(); sync(); document.getElementById('status').hidden = true;
     document.getElementById('thanks').hidden = true; form.hidden = false;
+    document.getElementById('thanks-files').hidden = true;
   });
 </script>
 </body>
