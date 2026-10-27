@@ -154,6 +154,10 @@ section + section { border-top: 1px solid var(--border); }
 .doc hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0 0; }
 .doc .foot-note { color: var(--muted); font-size: 15px; margin-top: 1.5rem; }
 .doc a { color: var(--text); }
+/* A button inside a document page keeps its own colours (27 Oct: the
+   join page's buttons were dark text on the dark button). */
+.doc a.btn { color: var(--on-ink); }
+.doc a.btn.ghost { color: var(--text); }
 
 @media (max-width: 900px) {
   .hero .wrap, .demo { grid-template-columns: 1fr; }
