@@ -22,7 +22,7 @@
 <main class="doc"><div class="wrap narrow">
 
 <h1>Privacy Policy for Naveto</h1>
-<p class="sub">Last updated: 15 November 2026</p>
+<p class="sub">Last updated: 21 November 2026</p>
 
 <p>Naveto is an app for learning German, published by an individual developer.
 This policy explains exactly what the app does with information, in plain
@@ -83,13 +83,20 @@ progress, which puts a copy wherever you choose. Files you export are entirely
 under your control.</p>
 
 <h3>3. Crash reports</h3>
-<p>Naveto uses <strong>Firebase Crashlytics</strong>, a Google service, to
-report crashes. When the app crashes it sends a diagnostic report so the fault
-can be fixed. A report contains the technical circumstances of the crash:
-the point in the code where it happened, your device model, operating system
-version, app version, and a randomly generated installation identifier that
-distinguishes one installation from another. It does not contain your name,
-your email, your learning data or anything you typed.</p>
+<p>Naveto uses <strong>Sentry</strong> (Functional Software, Inc.) to report
+crashes and errors, on Android and iPhone. When the app crashes, or an error
+stops a screen from working, it sends a diagnostic report so the fault can be
+fixed. A report contains the technical circumstances of the error: the point in
+the code where it happened, the names of the last few screens opened before it
+(for example "lesson" or "words", not what was on them), your device model,
+operating system version, app version, and a randomly generated installation
+identifier that distinguishes one installation from another. It does not
+contain your name, your email, your profile, your learning data or anything
+you typed or said; the app removes such fields before a report leaves the
+phone. Reports are stored in Sentry's data centre in <strong>Frankfurt,
+Germany</strong> (EU) and kept for no longer than 90 days. Sentry processes them only on the
+developer's instructions, under a data processing agreement that includes the
+EU Standard Contractual Clauses for any access from outside the EU.</p>
 
 <h3>4. Purchases</h3>
 <p>Naveto sells nothing at the moment: every level, lesson and practice paper
@@ -232,9 +239,11 @@ turn them off again at any time in the app or in your phone's settings.</p>
       software.</li>
   <li>It has <strong>no analytics or tracking</strong> beyond the crash
       reporting described above. It does not record which screens you visit or
-      how long you use it.</li>
+      how long you use it; the only exception is a crash report, which names
+      the last few screens opened before the error.</li>
   <li>It <strong>does not sell or share your information</strong> with anyone.
       The only third parties involved are Google and Apple in the roles above;
+      Sentry, which receives crash reports;
       Supabase, which stores profiles, synced progress, reports and
       website feedback for the developer; and, only while you talk with the
       AI partner, Anthropic and Google Cloud Text-to-Speech (section 9).</li>
@@ -249,7 +258,7 @@ turn them off again at any time in the app or in your phone's settings.</p>
   <tbody>
     <tr><td>Lessons, reviews, mistakes, settings</td><td>Your device; your Google Drive if device backup is on</td><td>To teach you, and to survive a new phone</td></tr>
     <tr><td>Speech, while the mic button is held</td><td>Android's speech recogniser, usually Google's; on iPhone, Apple's (on the phone where it can)</td><td>To turn what you said into text and check it</td></tr>
-    <tr><td>Crash diagnostics and device model</td><td>Firebase Crashlytics (Google)</td><td>To find and fix crashes</td></tr>
+    <tr><td>Crash and error diagnostics, device model, the last screens opened</td><td>Sentry, Frankfurt (EU), for the developer</td><td>To find and fix crashes</td></tr>
     <tr><td>Notification token</td><td>Firebase Cloud Messaging (Google)</td><td>To be able to deliver a reminder</td></tr>
     <tr><td>Email, name, user ID and a copy of your progress, only if you create a profile</td><td>Supabase, Frankfurt (EU), for the developer</td><td>To give you your progress on another phone</td></tr>
     <tr><td>Screenshots or recordings you add to a report or to website feedback</td><td>Supabase, Frankfurt (EU), for the developer</td><td>To see the problem; deleted after 90 days</td></tr>
